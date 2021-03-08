@@ -1,15 +1,15 @@
 [
 	{
-		"modid": "unsaddle",
-		"name": "Unsaddle",
-		"description": "This mod allows to remove the saddle attached to a pig.",
+		"modid": "zabuton",
+		"name": "Zabuton",
+		"description": "This mod adds Zabuton, a Japanese cushion for sitting.",
 		"version": "${version}",
 		"mcversion": "${mcversion}",
 		"url": "Nothing",
 		"updateUrl": "Nothing",
 		"authorList": ["ryoryo"],
-		"credits": "Many minecraft modders!",
-		"logoFile": "assets/unsaddle/mod_logo.png",
+		"credits": "MMM, EMB4, and many minecraft modders!",
+		"logoFile": "assets/zabuton/mod_logo.png",
 		"screenshots": [],
 		"dependencies": []
 	}
