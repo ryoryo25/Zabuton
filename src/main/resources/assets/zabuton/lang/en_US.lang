@@ -16,3 +16,6 @@ item.zabuton_light_blue.name=Light Blue Zabuton
 item.zabuton_magenta.name=Magenta Zabuton
 item.zabuton_orange.name=Orange Zabuton
 item.zabuton_white.name=White Zabuton
+
+//entity
+entity.zabuton.name=Zabuton

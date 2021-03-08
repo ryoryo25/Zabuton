@@ -16,3 +16,6 @@ item.zabuton_light_blue.name=空色の座布団
 item.zabuton_magenta.name=赤紫色の座布団
 item.zabuton_orange.name=橙色の座布団
 item.zabuton_white.name=白色の座布団
+
+//entity
+entity.zabuton.name=座布団
