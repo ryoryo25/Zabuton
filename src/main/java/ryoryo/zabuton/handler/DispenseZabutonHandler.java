@@ -14,12 +14,12 @@ public class DispenseZabutonHandler extends BehaviorProjectileDispense {
 	@Override
 	public ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
 		// 色を識別するためにItemStackを確保
-		zabuton = stack;
+		this.zabuton = stack;
 		return super.dispenseStack(source, stack);
 	}
 
 	@Override
 	protected IProjectile getProjectileEntity(World world, IPosition position, ItemStack stack) {
-		return new EntityZabuton(world, position.getX(), position.getY(), position.getZ(), (byte) zabuton.getItemDamage());
+		return new EntityZabuton(world, position.getX(), position.getY(), position.getZ(), (byte) this.zabuton.getItemDamage());
 	}
 }
