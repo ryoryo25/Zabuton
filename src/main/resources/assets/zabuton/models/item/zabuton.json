@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "polishedstone_v2:items/zabuton"
+		"layer0": "zabuton:items/zabuton"
 	}
 }
