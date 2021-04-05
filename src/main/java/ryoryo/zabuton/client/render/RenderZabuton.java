@@ -55,7 +55,7 @@ public class RenderZabuton extends Render<EntityZabuton> {
 		} else {
 			// Entityがスポーン後、サーバから色情報を取得するまで描画しない。どの色で描画すればいいかわからないため
 			shadowSize = 0.0F;
-		} ;
+		}
 	}
 
 	@Override
