@@ -1,7 +1,6 @@
 package ryoryo.zabuton.item;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -16,16 +15,18 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import ryoryo.polishedlib.item.ItemBase;
+import ryoryo.polishedlib.item.ItemBaseMeta;
 import ryoryo.polishedlib.util.RegistryUtils;
 import ryoryo.polishedlib.util.Utils;
 import ryoryo.polishedlib.util.enums.EnumColor;
+import ryoryo.polishedlib.util.handlers.ModelHandler;
+import ryoryo.polishedlib.util.interfaces.IItemColorProvider;
 import ryoryo.zabuton.entity.EntityZabuton;
 
-public class ItemZabuton extends ItemBase implements IItemColor {
+public class ItemZabuton extends ItemBaseMeta implements IItemColorProvider {
+
 	public ItemZabuton() {
-		super("zabuton", CreativeTabs.MISC);
-		this.setHasSubtypes(true);
+		super("zabuton", CreativeTabs.DECORATIONS);
 	}
 
 	@Override
@@ -70,18 +71,23 @@ public class ItemZabuton extends ItemBase implements IItemColor {
 	}
 
 	@Override
-	public int colorMultiplier(ItemStack stack, int tintIndex) {
-		return EnumColor.byDyeDamage(stack.getItemDamage()).getColorValue();
+	public String getUnlocalizedName(ItemStack stack) {
+		return this.getUnlocalizedName() + "_" + EnumColor.NAMES_DYE[stack.getItemDamage()];
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
-		return this.getUnlocalizedName() + "_" + EnumColor.byDyeDamage(stack.getItemDamage()).getName();
+	public int colorMultiplier(ItemStack stack, int tintIndex) {
+		return EnumColor.byDyeDamage(stack.getItemDamage()).getColorValue();
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
 		RegistryUtils.registerSubItems(this, EnumColor.getLength(), tab, items);
+	}
+
+	@Override
+	public void registerModels() {
+		ModelHandler.registerItemModel(this, EnumColor.getLength());
 	}
 }
