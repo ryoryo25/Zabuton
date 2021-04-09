@@ -71,7 +71,7 @@ public class ItemZabuton extends ItemBaseMeta implements IItemColorProvider {
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getUnlocalizedNameImpl(ItemStack stack) {
 		return this.getUnlocalizedName() + "_" + EnumColor.NAMES_DYE[stack.getItemDamage()];
 	}
 
@@ -82,12 +82,12 @@ public class ItemZabuton extends ItemBaseMeta implements IItemColorProvider {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+	public void getSubItemsImpl(CreativeTabs tab, NonNullList<ItemStack> items) {
 		RegistryUtils.registerSubItems(this, EnumColor.getLength(), tab, items);
 	}
 
 	@Override
-	public void registerModels() {
+	public void registerModelsImpl() {
 		ModelHandler.registerItemModel(this, EnumColor.getLength());
 	}
 }
